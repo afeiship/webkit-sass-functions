@@ -1,8 +1,83 @@
+/*black Start*/
+@function black($opacity) {
+  @return rgba(black, $opacity);
+}
+/*black End*/
+
 /*calc-percent Start*/
 @function calc-percent( $target, $context ) {
 	@return $target / $context * 100%;
 }
 /*calc-percent End*/
+
+/*debug Start*/
+@function debug($list) {
+  $result: #{"[ "};
+
+  @each $item in $list {
+    @if length($item) > 1 {
+      $result: $result#{debug($item)};
+    }
+    @else {
+      $result: $result#{$item};
+    }
+    @if index($list, $item) != length($list) {
+      $result: $result#{", "};
+    }
+  }
+
+  $result: $result#{" ]"};
+
+  @return $result;
+}
+/*debug End*/
+
+/*first Start*/
+@function first($list) {
+  @return nth($list, 1);
+}
+/*first End*/
+
+/*last Start*/
+@function last($list) {
+  @return nth($list, length($list));
+}
+/*last End*/
+
+/*purge Start*/
+@function purge($list) {
+  $result: ();
+
+  @each $item in $list {
+    @if $item != null
+    and $item != false
+    and $item != "" {
+      $result: append($result, $item);
+    }
+  }
+
+  @return $result;
+}
+/*purge End*/
+
+/*remove-duplicates Start*/
+@function remove-duplicates($list, $recursive: false) {
+  $result: ();
+
+  @each $item in $list {
+    @if not index($result, $item) {
+      @if length($item) > 1 and $recursive {
+        $result: append($result, remove-duplicates($item, $recursive));
+      }
+      @else {
+        $result: append($result, $item);
+      }
+    }
+  }
+
+  @return $result;
+}
+/*remove-duplicates End*/
 
 /*strip-units Start*/
 @function strip-units($inNumber){
