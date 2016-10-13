@@ -1,0 +1,5 @@
+/*strip-units Start*/
+@function strip-units($inNumber){
+	@return $inNumber / ($inNumber * 0 + 1);
+}
+/*strip-units End*/
