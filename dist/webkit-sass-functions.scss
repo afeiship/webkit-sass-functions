@@ -38,6 +38,16 @@
 }
 /*first End*/
 
+/*generate-list Start*/
+@function generate-list( $from:0, $to:9 ) {
+  $list: ();
+  @for $i from $from through $to {
+    $list: append($list, $i);
+  }
+  @return $list;
+}
+/*generate-list End*/
+
 /*last Start*/
 @function last($list) {
   @return nth($list, length($list));
