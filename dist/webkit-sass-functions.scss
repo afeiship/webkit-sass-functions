@@ -70,6 +70,17 @@
 }
 /*purge End*/
 
+/*rem Start*/
+@function to-rem-value($inValue,$rem) {
+  @if $rem==px {
+    @return #{$inValue}px;
+  } @else {
+    @return #{$inValue/$rem}rem;
+  }
+}
+
+/*rem End*/
+
 /*remove-duplicates Start*/
 @function remove-duplicates($list, $recursive: false) {
   $result: ();

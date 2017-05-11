@@ -1,0 +1,10 @@
+/*rem Start*/
+@function to-rem-value($inValue,$rem) {
+  @if $rem==px {
+    @return #{$inValue}px;
+  } @else {
+    @return #{$inValue/$rem}rem;
+  }
+}
+
+/*rem End*/
