@@ -1,5 +1,0 @@
-/*calc-percent Start*/
-@function calc-percent( $target, $context ) {
-	@return $target / $context * 100%;
-}
-/*calc-percent End*/

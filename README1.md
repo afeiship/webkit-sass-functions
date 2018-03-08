@@ -3,7 +3,7 @@
 
 ## todos:
 - [x] strip-units
-- [x] calc-percent
+- percentage(1/50) => 2%;
 
 
 ## resources:
