@@ -94,6 +94,13 @@
 }
 /*remove-duplicates End*/
 
+/*rpx Start*/
+@function to-rpx-value($inValue) {
+  @return #{$inValue/2}rpx;
+}
+
+/*rpx End*/
+
 /*strip-units Start*/
 @function strip-units($inNumber){
 	@return $inNumber / ($inNumber * 0 + 1);

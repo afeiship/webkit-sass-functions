@@ -10,7 +10,7 @@
   "scripts": {
     "build": "gulp"
   },
-  "main":"dist/webkit-sass-functions.scss",
+  "main": "dist/webkit-sass-functions.scss",
   "license": "MIT",
   "devDependencies": {
     "del": "^2.2.1",
