@@ -96,7 +96,7 @@
 
 /*rpx Start*/
 @function to-rpx-value($inValue) {
-  @return #{$inValue/2}rpx;
+  @return #{$inValue*2}rpx;
 }
 
 /*rpx End*/
