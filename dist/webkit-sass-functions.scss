@@ -99,6 +99,10 @@
   @return #{$inValue*2}rpx;
 }
 
+@function rpx($inValue) {
+  @return $inValue * 1rpx;
+}
+
 /*rpx End*/
 
 /*strip-units Start*/
