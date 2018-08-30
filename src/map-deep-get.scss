@@ -1,0 +1,11 @@
+/*map-deep-get Start*/
+
+//https://www.sitepoint.com/extra-map-functions-sass/
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+/*map-deep-get End*/

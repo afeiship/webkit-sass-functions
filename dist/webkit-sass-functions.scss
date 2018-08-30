@@ -26,6 +26,19 @@
 }
 /*debug End*/
 
+/*dynamic-text-color Start*/
+// http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
+
+@function dynamic-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000000; // Lighter backgorund, return dark color
+  } @else {
+    @return #ffffff; // Darker background, return light color
+  }
+}
+/*dynamic-text-color End*/
+
+
 /*first Start*/
 @function first($list) {
   @return nth($list, 1);
@@ -47,6 +60,18 @@
   @return nth($list, length($list));
 }
 /*last End*/
+
+/*map-deep-get Start*/
+
+//https://www.sitepoint.com/extra-map-functions-sass/
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+/*map-deep-get End*/
 
 /*purge Start*/
 @function purge($list) {

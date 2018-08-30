@@ -1,0 +1,12 @@
+/*dynamic-text-color Start*/
+// http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
+
+@function dynamic-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000000; // Lighter backgorund, return dark color
+  } @else {
+    @return #ffffff; // Darker background, return light color
+  }
+}
+/*dynamic-text-color End*/
+
