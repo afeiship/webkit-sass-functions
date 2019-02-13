@@ -1,6 +1,7 @@
 /*map-deep-get Start*/
 
-//https://www.sitepoint.com/extra-map-functions-sass/
+// https://www.sitepoint.com/extra-map-functions-sass/
+// https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
 
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
