@@ -1,4 +1,5 @@
 /*strip-units Start*/
+// https://css-tricks.com/snippets/sass/strip-unit-function/
 @function strip-units($inNumber){
 	@return $inNumber / ($inNumber * 0 + 1);
 }
