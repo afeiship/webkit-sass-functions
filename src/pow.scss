@@ -1,0 +1,15 @@
+// @thanks to: https://css-tricks.com/snippets/sass/power-function/
+@function pow($inValue, $inExponent) {
+  $value: 1;
+  $exponent: abs($inExponent);
+
+  @for $i from 1 through $exponent {
+    $value: $value * $inValue;
+  }
+
+  @if $inExponent > 0 {
+    @return $value;
+  } @else {
+    @return 1 / $value;
+  }
+}

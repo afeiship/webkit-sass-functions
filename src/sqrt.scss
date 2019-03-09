@@ -1,0 +1,10 @@
+// square root function using the Babylonian method
+// https://gist.github.com/ryanjafari/bf752b6ef52726352239
+// http://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method
+@function sqrt($square, $tolerance: 0.001, $estimate: $square/2) {
+  @if abs($square - $estimate * $estimate) < $tolerance {
+    @return $estimate;
+  }
+
+  @return sqrt($square, $tolerance, ($estimate + $square/$estimate)/2);
+}
