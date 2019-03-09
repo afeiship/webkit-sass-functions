@@ -74,6 +74,26 @@
 }
 /*map-deep-get End*/
 
+@function map-get-path($inMap, $inPath) {
+  @return $inMap;
+}
+
+// @thanks to: https://css-tricks.com/snippets/sass/power-function/
+@function pow($inValue, $inExponent) {
+  $value: 1;
+  $exponent: abs($inExponent);
+
+  @for $i from 1 through $exponent {
+    $value: $value * $inValue;
+  }
+
+  @if $inExponent > 0 {
+    @return $value;
+  } @else {
+    @return 1 / $value;
+  }
+}
+
 /*purge Start*/
 @function purge($list) {
   $result: ();
@@ -130,6 +150,41 @@
 }
 
 /*rpx End*/
+
+// square root function using the Babylonian method
+// https://gist.github.com/ryanjafari/bf752b6ef52726352239
+// http://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method
+@function sqrt($square, $tolerance: 0.001, $estimate: $square/2) {
+  @if abs($square - $estimate * $estimate) < $tolerance {
+    @return $estimate;
+  }
+
+  @return sqrt($square, $tolerance, ($estimate + $square/$estimate)/2);
+}
+
+// https://stackoverflow.com/questions/32376461/how-to-split-a-string-into-two-lists-of-numbers-in-sass
+
+@function str-split($string, $separator) {
+  // empty array/list
+  $split-arr: ();
+  // first index of separator in string
+  $index: str-index($string, $separator);
+  // loop through string
+  @while $index != null {
+    // get the substring from the first character to the separator
+    $item: str-slice($string, 1, $index - 1);
+    // push item to array
+    $split-arr: append($split-arr, $item);
+    // remove item and separator from string
+    $string: str-slice($string, $index + 1);
+    // find new index of separator
+    $index: str-index($string, $separator);
+  }
+  // add the remaining string to list (the last item)
+  $split-arr: append($split-arr, $string);
+
+  @return $split-arr;
+}
 
 /*strip-units Start*/
 @function strip-units($inNumber){
