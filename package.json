@@ -1,5 +1,5 @@
 {
-  "name": "webkit-sass-functions",
+  "name": "@feizheng/webkit-sass-functions",
   "version": "1.0.0",
   "description": "Webkit sass functions.",
   "homepage": "https://github.com/afeiship/webkit-sass-functions",
@@ -14,9 +14,12 @@
   "license": "MIT",
   "devDependencies": {
     "del": "^2.2.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.2.0",
     "yargs": "^4.7.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
