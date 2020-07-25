@@ -1,3 +1,12 @@
+/*!
+ * name: @feizheng/webkit-sass-functions
+ * description: Webkit sass functions.
+ * homepage: https://github.com/afeiship/webkit-sass-functions
+ * version: 2.0.0
+ * date: 2020-07-25T12:22:44.185Z
+ * license: MIT
+ */
+
 /*black Start*/
 @function black($opacity) {
   @return rgba(black, $opacity);
