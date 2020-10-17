@@ -2,8 +2,8 @@
  * name: @feizheng/webkit-sass-functions
  * description: Webkit sass functions.
  * homepage: https://github.com/afeiship/webkit-sass-functions
- * version: 2.0.0
- * date: 2020-07-25T12:22:44.185Z
+ * version: 2.0.1
+ * date: 2020-10-17T09:47:02.736Z
  * license: MIT
  */
 
@@ -159,6 +159,30 @@
 }
 
 /*rpx End*/
+
+// https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+@function slice($list, $start: 1, $end: length($list)) {
+  $result: null;
+
+  @if type-of($start) != number or type-of($end) != number {
+    @warn "Either $start or $end are not a number for `slice`.";
+  } @else if $start > $end {
+    @warn "The start index has to be lesser than or equals to the end index for `slice`.";
+  } @else if $start < 1 or $end < 1 {
+    @warn "List indexes must be non-zero integers for `slice`.";
+  } @else if $start > length($list) {
+    @warn "List index is #{$start} but list is only #{length($list)} item long for `slice`.";
+  } @else if $end > length($list) {
+    @warn "List index is #{$end} but list is only #{length($list)} item long for `slice`.";
+  } @else {
+    $result: ();
+
+    @for $i from $start through $end {
+      $result: append($result, nth($list, $i));
+    }
+  }
+  @return $result;
+}
 
 // square root function using the Babylonian method
 // https://gist.github.com/ryanjafari/bf752b6ef52726352239
