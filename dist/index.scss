@@ -3,7 +3,7 @@
  * description: Webkit sass functions.
  * homepage: https://github.com/afeiship/wsui-functions
  * version: 1.0.0
- * date: 2020-11-28 16:09:12
+ * date: 2020-11-28 16:12:52
  * license: MIT
  */
 
@@ -62,22 +62,13 @@
 /*range End*/
 
 /*rempx Start*/
-@function rem1px($value, $rem: 0) {
+@function rem($value, $rem: 50) {
   @if $rem == px {
     @return #{$value}px;
   } @else {
-    @return #{$value/375}rem;
+    @return #{$value/$rem}rem;
   }
 }
-
-@function rem2px($value, $rem: 0) {
-  @if $rem == px {
-    @return #{$value}px;
-  } @else {
-    @return #{$value/750}rem;
-  }
-}
-
 /*rem End*/
 
 /*remove-duplicates Start*/

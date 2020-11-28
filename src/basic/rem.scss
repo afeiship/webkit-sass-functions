@@ -1,18 +1,9 @@
 /*rempx Start*/
-@function rem1px($value, $rem: 0) {
+@function rem($value, $rem: 50) {
   @if $rem == px {
     @return #{$value}px;
   } @else {
-    @return #{$value/375}rem;
+    @return #{$value/$rem}rem;
   }
 }
-
-@function rem2px($value, $rem: 0) {
-  @if $rem == px {
-    @return #{$value}px;
-  } @else {
-    @return #{$value/750}rem;
-  }
-}
-
 /*rem End*/

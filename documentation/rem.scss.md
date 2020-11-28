@@ -4,15 +4,13 @@
 ```scss
 // input
 .demo{
-  listpx: rem1px(100, px);
-  list1: rem1px(375);
-  list2: rem2px(750);
+  listpx: rem(100, px);
+  list1: rem(375);
 }
 
 // output
 .demo {
   listpx: 100px;
-  list1: 1rem;
-  list2: 1rem;
+  list1: 7.5rem;
 }
 ```
