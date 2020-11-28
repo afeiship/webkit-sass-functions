@@ -3,7 +3,8 @@
 // https://www.sitepoint.com/extra-map-functions-sass/
 // https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
 
-@function map-deep-get($map, $keys...) {
+@function get($map, $path) {
+  $keys: str-split($path, ".");
   @each $key in $keys {
     $map: map-get($map, $key);
   }

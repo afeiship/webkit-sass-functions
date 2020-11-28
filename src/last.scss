@@ -1,5 +1,0 @@
-/*last Start*/
-@function last($list) {
-  @return nth($list, length($list));
-}
-/*last End*/

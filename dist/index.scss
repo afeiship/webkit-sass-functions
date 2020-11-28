@@ -1,44 +1,31 @@
 /*!
- * name: @feizheng/webkit-sass-functions
+ * name: @jswork/wsui-functions
  * description: Webkit sass functions.
- * homepage: https://github.com/afeiship/webkit-sass-functions
- * version: 2.0.1
- * date: 2020-10-17T09:47:02.736Z
+ * homepage: https://github.com/afeiship/wsui-functions
+ * version: 1.0.0
+ * date: 2020-11-28 16:06:43
  * license: MIT
  */
 
-/*black Start*/
-@function black($opacity) {
-  @return rgba(black, $opacity);
-}
-/*black End*/
-
-/*debug Start*/
-@function debug($list) {
-  $result: #{"[ "};
-
-  @each $item in $list {
-    @if length($item) > 1 {
-      $result: $result#{debug($item)};
-    }
-    @else {
-      $result: $result#{$item};
-    }
-    @if index($list, $item) != length($list) {
-      $result: $result#{", "};
-    }
+/*last Start*/
+@function at($list, $target) {
+  $type: typeof($target);
+  @if $target == first {
+    @return nth($list, $n: 1);
   }
 
-  $result: $result#{" ]"};
+  @if $target == last {
+    @return nth($list, length($list));
+  }
 
-  @return $result;
+  @return nth($list, $target - 1);
 }
-/*debug End*/
+/*last End*/
 
 /*dynamic-text-color Start*/
 // http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
 
-@function dynamic-text-color($color) {
+@function dynamic-color($color) {
   @if (lightness($color) > 50) {
     @return #000000; // Lighter backgorund, return dark color
   } @else {
@@ -48,83 +35,46 @@
 /*dynamic-text-color End*/
 
 
-/*first Start*/
-@function first($list) {
-  @return nth($list, 1);
-}
-/*first End*/
-
-/*generate-list Start*/
-@function generate-list( $from:0, $to:9 ) {
-  $list: ();
-  @for $i from $from through $to {
-    $list: append($list, $i);
-  }
-  @return $list;
-}
-/*generate-list End*/
-
-/*last Start*/
-@function last($list) {
-  @return nth($list, length($list));
-}
-/*last End*/
-
-/*map-deep-get Start*/
-
-// https://www.sitepoint.com/extra-map-functions-sass/
-// https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
-
-@function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
-  @return $map;
-}
-/*map-deep-get End*/
-
-@function map-get-path($inMap, $inPath) {
-  @return $inMap;
-}
-
 // @thanks to: https://css-tricks.com/snippets/sass/power-function/
-@function pow($inValue, $inExponent) {
+@function pow($in-value, $in-exp) {
   $value: 1;
-  $exponent: abs($inExponent);
+  $exponent: abs($in-exp);
 
   @for $i from 1 through $exponent {
-    $value: $value * $inValue;
+    $value: $value * $in-value;
   }
 
-  @if $inExponent > 0 {
+  @if $in-exp > 0 {
     @return $value;
   } @else {
     @return 1 / $value;
   }
 }
 
-/*purge Start*/
-@function purge($list) {
-  $result: ();
-
-  @each $item in $list {
-    @if $item != null
-    and $item != false
-    and $item != "" {
-      $result: append($result, $item);
-    }
+/*range Start*/
+@function range($from: 0, $to: 9) {
+  $list: ();
+  @for $i from $from through $to {
+    $list: append($list, $i);
   }
-
-  @return $result;
+  @return $list;
 }
-/*purge End*/
+/*range End*/
 
-/*rem Start*/
-@function to-rem-value($inValue,$rem) {
+/*rempx Start*/
+@function rem1px($value, $rem: 0) {
   @if $rem == px {
-    @return #{$inValue}px;
+    @return #{$value}px;
   } @else {
-    @return #{$inValue/$rem}rem;
+    @return #{$value/375}rem;
+  }
+}
+
+@function rem2px($value, $rem: 0) {
+  @if $rem == px {
+    @return #{$value}px;
+  } @else {
+    @return #{$value/750}rem;
   }
 }
 
@@ -148,17 +98,6 @@
   @return $result;
 }
 /*remove-duplicates End*/
-
-/*rpx Start*/
-@function to-rpx-value($inValue) {
-  @return #{$inValue*2}rpx;
-}
-
-@function rpx($inValue) {
-  @return $inValue * 1rpx;
-}
-
-/*rpx End*/
 
 // https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
 @function slice($list, $start: 1, $end: length($list)) {
@@ -221,7 +160,21 @@
 
 /*strip-units Start*/
 // https://css-tricks.com/snippets/sass/strip-unit-function/
-@function strip-units($inNumber){
-	@return $inNumber / ($inNumber * 0 + 1);
+@function strip-units($num) {
+  @return $num / ($num * 0 + 1);
 }
 /*strip-units End*/
+
+/*map-deep-get Start*/
+
+// https://www.sitepoint.com/extra-map-functions-sass/
+// https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
+
+@function get($map, $path) {
+  $keys: str-split($path, ".");
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+/*map-deep-get End*/

@@ -1,4 +1,4 @@
-# webkit-sass-functions
+# wsui-functions
 > Webkit sass functions.
 
 [![version][version-image]][version-url]
@@ -8,34 +8,34 @@
 
 ## installation
 ```shell
-npm i @feizheng/webkit-sass-functions
-```
-
-## update
-```shell
-npm update @feizheng/webkit-sass-functions
+npm i @jswork/wsui-functions
 ```
 
 ## usage
 ```scss
-@import '~@feizheng/webkit-sass-functions';
+@import '~@jswork/wsui-functions';
 ```
 
 ## documentation
-- https://afeiship.github.io/webkit-sass-functions/
+- [x] [at.scss](./documentation/at.scss.md)
+- [x] [dynamic-color.scss](./documentation/dynamic-color.scss.md)
+- [x] [get.scss](./documentation/get.scss.md)
+- [x] [pow.scss](./documentation/pow.scss.md)
+- [x] [range.scss](./documentation/range.scss.md)
+- [x] [rem.scss](./documentation/rem.scss.md)
 
 ## license
-Code released under [the MIT license](https://github.com/afeiship/webkit-sass-functions/blob/master/LICENSE.txt).
+Code released under [the MIT license](https://github.com/afeiship/wsui-functions/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@feizheng/webkit-sass-functions
-[version-url]: https://npmjs.org/package/@feizheng/webkit-sass-functions
+[version-image]: https://img.shields.io/npm/v/@jswork/wsui-functions
+[version-url]: https://npmjs.org/package/@jswork/wsui-functions
 
-[license-image]: https://img.shields.io/npm/l/@feizheng/webkit-sass-functions
-[license-url]: https://github.com/afeiship/webkit-sass-functions/blob/master/LICENSE.txt
+[license-image]: https://img.shields.io/npm/l/@jswork/wsui-functions
+[license-url]: https://github.com/afeiship/wsui-functions/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@feizheng/webkit-sass-functions
-[size-url]: https://github.com/afeiship/webkit-sass-functions/blob/master/dist/webkit-sass-functions.min.js
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/wsui-functions
+[size-url]: https://github.com/afeiship/wsui-functions/blob/master/dist/wsui-functions.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@feizheng/webkit-sass-functions
-[download-url]: https://www.npmjs.com/package/@feizheng/webkit-sass-functions
+[download-image]: https://img.shields.io/npm/dm/@jswork/wsui-functions
+[download-url]: https://www.npmjs.com/package/@jswork/wsui-functions
 

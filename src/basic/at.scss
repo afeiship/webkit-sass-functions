@@ -1,0 +1,14 @@
+/*last Start*/
+@function at($list, $target) {
+  $type: typeof($target);
+  @if $target == first {
+    @return nth($list, $n: 1);
+  }
+
+  @if $target == last {
+    @return nth($list, length($list));
+  }
+
+  @return nth($list, $target - 1);
+}
+/*last End*/

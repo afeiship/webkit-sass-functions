@@ -1,18 +1,17 @@
-(function() {
+(function () {
   'use strict';
 
   var gulp = require('gulp');
-  var autoprefixer = require('autoprefixer');
   var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'gulp.*', 'del', '@feizheng/gulp-*'],
+    pattern: ['gulp-*', 'gulp.*', 'del', '@jswork/gulp-*'],
   });
 
   //styles
-  gulp.task('styles', function() {
+  gulp.task('styles', function () {
     return gulp
-      .src('src/*.scss')
+      .src(['src/basic/*.scss', 'src/composite/*.scss'])
       .pipe($.concat('index.scss'))
-      .pipe($.feizheng.pkgHeader())
-      .pipe(gulp.dest('dist'))
+      .pipe($.jswork.pkgHeader())
+      .pipe(gulp.dest('dist'));
   });
 })();

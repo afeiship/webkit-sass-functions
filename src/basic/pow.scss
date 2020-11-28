@@ -1,13 +1,13 @@
 // @thanks to: https://css-tricks.com/snippets/sass/power-function/
-@function pow($inValue, $inExponent) {
+@function pow($in-value, $in-exp) {
   $value: 1;
-  $exponent: abs($inExponent);
+  $exponent: abs($in-exp);
 
   @for $i from 1 through $exponent {
-    $value: $value * $inValue;
+    $value: $value * $in-value;
   }
 
-  @if $inExponent > 0 {
+  @if $in-exp > 0 {
     @return $value;
   } @else {
     @return 1 / $value;

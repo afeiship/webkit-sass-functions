@@ -1,32 +1,28 @@
 {
-  "name": "@feizheng/webkit-sass-functions",
-  "version": "2.0.1",
+  "name": "@jswork/wsui-functions",
+  "version": "1.0.0",
   "description": "Webkit sass functions.",
-  "homepage": "https://github.com/afeiship/webkit-sass-functions",
+  "homepage": "https://github.com/afeiship/wsui-functions",
   "author": {
     "name": "afei",
     "email": "1290657123@qq.com"
   },
   "scripts": {
     "build": "gulp",
-    "start": "node server.js"
+    "release": "release-it"
   },
   "main": "dist/index.scss",
   "license": "MIT",
   "devDependencies": {
-    "@feizheng/gulp-pkg-header": "^1.0.2",
-    "@feizheng/next-global": "^1.0.2",
-    "@feizheng/rake-git": "^1.2.1",
-    "autoprefixer": "^9.7.4",
-    "del": "^5.1.0",
-    "express": "^4.17.1",
+    "@jswork/gulp-pkg-header": "^1.0.3",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
-    "gulp-load-plugins": "^2.0.2",
-    "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^2.0.0"
+    "gulp-load-plugins": "^2.0.6",
+    "release-it": "^14.2.2"
   },
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   }
 }

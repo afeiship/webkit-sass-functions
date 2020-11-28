@@ -1,9 +1,9 @@
-/*generate-list Start*/
-@function generate-list( $from:0, $to:9 ) {
+/*range Start*/
+@function range($from: 0, $to: 9) {
   $list: ();
   @for $i from $from through $to {
     $list: append($list, $i);
   }
   @return $list;
 }
-/*generate-list End*/
+/*range End*/
