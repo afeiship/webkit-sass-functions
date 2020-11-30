@@ -3,19 +3,26 @@
  * description: Webkit sass functions.
  * homepage: https://github.com/afeiship/wsui-functions
  * version: 1.0.3
- * date: 2020-11-30 14:01:41
+ * date: 2020-11-30 14:54:33
  * license: MIT
  */
 
 /*last Start*/
-@function at($list, $target) {
-  $type: typeof($target);
+@function range($from: 0, $to: 9, $step: 1) {
+  $list: ();
+  @for $i from $from through $to {
+    @if length($list) == 0 {
+      $list: append($list, $i);
+    }
 
-  @if $target == n {
-    @return nth($list, length($list));
+    $last: nth($list, length($list));
+    $current: $last + $step;
+
+    @if ($current <= $to) {
+      $list: append($list, $current);
+    }
   }
-
-  @return nth($list, $target + 1);
+  @return $list;
 }
 /*last End*/
 
