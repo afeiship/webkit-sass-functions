@@ -9,9 +9,9 @@
 }
 
 // output
-.demo{
-  c1: dynamic-color(red);
-  c2: dynamic-color(white);
+.demo {
+  c1: #ffffff;
+  c2: #000000;
 }
 ```
 
