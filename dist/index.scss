@@ -2,23 +2,20 @@
  * name: @jswork/wsui-functions
  * description: Webkit sass functions.
  * homepage: https://github.com/afeiship/wsui-functions
- * version: 1.0.1
- * date: 2020-11-28 16:14:04
+ * version: 1.0.2
+ * date: 2020-11-30 09:54:48
  * license: MIT
  */
 
 /*last Start*/
 @function at($list, $target) {
   $type: typeof($target);
-  @if $target == first {
-    @return nth($list, $n: 1);
-  }
 
-  @if $target == last {
+  @if $target == n {
     @return nth($list, length($list));
   }
 
-  @return nth($list, $target - 1);
+  @return nth($list, $target + 1);
 }
 /*last End*/
 
