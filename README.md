@@ -23,6 +23,7 @@ npm i @jswork/wsui-functions
 - [x] [pow.scss](./documentation/pow.scss.md)
 - [x] [range.scss](./documentation/range.scss.md)
 - [x] [rem.scss](./documentation/rem.scss.md)
+- [x] [str-split.scss](./documentation/str-split.scss.md)
 - [x] [strip-unit.scss](./documentation/strip-unit.scss.md)
 
 ## license
