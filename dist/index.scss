@@ -2,8 +2,8 @@
  * name: @jswork/wsui-functions
  * description: Webkit sass functions.
  * homepage: https://github.com/afeiship/wsui-functions
- * version: 1.0.2
- * date: 2020-11-30 09:54:48
+ * version: 1.0.3
+ * date: 2020-11-30 14:01:41
  * license: MIT
  */
 
@@ -148,7 +148,7 @@
 
 /*strip-units Start*/
 // https://css-tricks.com/snippets/sass/strip-unit-function/
-@function strip-units($num) {
+@function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }
 /*strip-units End*/
