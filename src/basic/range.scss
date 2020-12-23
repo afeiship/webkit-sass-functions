@@ -1,8 +1,15 @@
 /*range Start*/
-@function range($from: 0, $to: 9) {
+@function range($from: 0, $to: 9, $step: 1) {
   $list: ();
   @for $i from $from through $to {
-    $list: append($list, $i);
+    @if length($list) == 0 {
+      $list: append($list, $i);
+    }
+    $last: nth($list, length($list));
+    $current: $last + $step;
+    @if ($current <= $to) {
+      $list: append($list, $current);
+    }
   }
   @return $list;
 }
