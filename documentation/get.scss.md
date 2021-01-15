@@ -12,8 +12,8 @@ $map:(
 );
 
 .demo{
-  sm: map-deep-get($map, 'sm.width');
-  lg: map-deep-get($map, 'lg.width');
+  sm: get($map, 'sm.width');
+  lg: get($map, 'lg.width');
 }
 
 // output
